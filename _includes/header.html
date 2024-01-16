@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="{{ site.desc }}">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Redirecting to {{ page.redir_to | default: site.redir_to }}</title>
+
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+
+  <link rel="canonical" href="{{ page.redir_to | default: site.redir_to }}"/>
+  <meta http-equiv="refresh" content="30; url={{ page.redir_to | default: site.redir_to }}" />
+
+  {% capture edit_url %}https://github.com/{{ site.org_name }}/{{ site.repo_name }}/edit/{{ site.branch }}/{{ page.path }}{% endcapture %}
+
+</head>
+<body class="{{ page.id }}">
+  <!--[if lt IE 7]>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="https://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+      </div>
+    </div>
+  </div>
+  <![endif]-->
+
+
+  <!-- Static navbar -->
+  <div id="header" class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ site.root_url }}/">Project Open Data</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="edit-button" href="{{ edit_url }}"><span>Edit this Page</span></a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Definitions<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/v1.1/schema">Metadata Schema v1.1</a></li>
+              <li><a href="/glossary">Open Data Glossary</a></li>
+              <li><a href="/open-standards">Data Standards</a></li>
+              <li><a href="/principles">Open Data Principles </a></li>
+              <li><a href="/open-licenses">Open Licenses</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidance<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/policy-memo">Policy - OMB M-13-13</a></li>
+              <li><a href="/implementation-guide">Implementation Guide</a></li>
+              <li><a href="/catalog">Data Catalog Requirements</a></li>
+              <li><a href="/faq">FAQ</a></li>
+            </ul>
+          </li>
+          <li><a href="https://github.com/{{ site.org_name }}/{{ site.repo_name }}/issues">Discuss</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+<div id="disclaimer">
+  <div class="container">
+    <p><a href="https://resources.data.gov/">Resources.data.gov</a> has replaced Project Open Data.</p>
+
+    <p>
+      On January 14, 2019, the
+      <a href="https://www.congress.gov/bill/115th-congress/house-bill/4174/text">Foundations for Evidence-Based Policymaking Act</a>
+      ("Evidence Act"), which includes the OPEN Government Data Act, was signed
+      into law. The Evidence Act requires the Office of Management and Budget,
+      the Office of Government Information Services, and the General Services
+      Administration to develop and maintain an online repository
+      (<a href="https://resources.data.gov/">Resources.data.gov</a>) of tools, best
+      practices, and schema standards to facilitate the adoption of open data
+      practices across the Federal Government.
+    </p>
+
+    <p>
+      Archived content of Project Open Data can be accessed at its <a href="https://github.com/project-open-data/project-open-data.github.io">GitHub repository</a>.
+      You can report missing content or provide any additional feedback via <a href="https://github.com/GSA/resources.data.gov/issues">GitHub</a>
+      or by emailing <a href="mailto:datagov@gsa.gov">datagov@gsa.gov</a>.
+    </p>
+  </div>
+</div>
